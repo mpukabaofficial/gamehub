@@ -18,9 +18,9 @@ const GameGrid = () => {
   useEffect(() => {
     console.log("fetching games");
     apiClient
-      .get<FetchedGames>("/games")
+      .get<FetchedGames>("/xgames")
       .then((response) => setGames(response.data.results))
-      .catch((error) => setError(error));
+      .catch((error) => setError(error.message));
     console.log("fetched games");
   }, []);
 
